@@ -30,12 +30,12 @@ jobs:
                   key: ${{ secrets.SSHKEY }}
                   known_hosts: 'unnecessary'
       - name: Adding Known Hosts
-        run: ssh-keyscan -H  103.191.130.35 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -H  ${{ secrets.HOST }} >> ~/.ssh/known_hosts
         
       - name: Deploy to remote server
         uses: appleboy/ssh-action@v1.0.3
         with:
-            host: 103.191.130.35
+            host: ${{ secrets.HOST }}
             username: monitor
             port: 22
             key: ${{ secrets.SSHKEY }}
