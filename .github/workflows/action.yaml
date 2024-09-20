@@ -27,7 +27,7 @@ jobs:
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
-                  key: ${{ secrets.SSH_KEY }}
+                  key: ${{ secrets.SSHKEY }}
                   known_hosts: 'unnecessary'
       - name: Adding Known Hosts
         run: ssh-keyscan -H  103.191.130.35 >> ~/.ssh/known_hosts
