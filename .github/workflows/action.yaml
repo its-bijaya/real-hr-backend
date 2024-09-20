@@ -31,8 +31,8 @@ jobs:
             port: 22
             key: ${{ secrets.SSHKEY }}
             script: | 
-                #pull the docker image and run docker compose
-                 cd ~/home/ubuntu/real-hr                   
+                # pull the docker image and run docker compose
+                # cd /home/ubuntu/real-hr                   
                  sudo docker pull itsbijaya/real-hr-backend:latest
                  sudo docker-compose up --build        
 
