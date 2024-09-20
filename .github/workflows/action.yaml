@@ -24,7 +24,14 @@ jobs:
           #dockerfile: Dockerfile
           #username: ${{ secrets.DOCKER_USERNAME }}
           #password: ${{ secrets.DOCKER_PASSWORD }}
-
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+                  key: ${{ secrets.SSH_KEY }}
+                  known_hosts: 'unnecessary'
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H  103.191.130.35 >> ~/.ssh/known_hosts
+        
       - name: Deploy to remote server
         uses: appleboy/ssh-action@v1.0.3
         with:
