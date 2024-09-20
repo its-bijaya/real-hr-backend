@@ -1,0 +1,15 @@
+{% extends 'email_base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block heading %}
+    {{ subtitle }}
+{% endblock %}
+
+{% block message %}
+    {% autoescape off %}
+        {{ message }}
+    {% endautoescape %}
+{% endblock %}

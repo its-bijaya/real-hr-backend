@@ -1,0 +1,5 @@
+# 1st index => Major Release (like django version update)
+# 2nd index => Minor Release (like package update)
+# 3rd index => Build Release (like sprint release)
+# 4th index => Patch Release (like hotfix, patches)
+VERSION = (3, 0, 44, 0, 240322, 'released')

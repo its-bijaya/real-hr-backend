@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-26 16:50+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings/base.py:176
+msgid "English"
+msgstr ""
+
+#: config/settings/base.py:177
+msgid "Nepali"
+msgstr ""
+
+#: irhrs/core/fields.py:10
+msgid "A JSON object"
+msgstr ""
+
+#: irhrs/core/fields.py:12 irhrs/core/fields.py:36 irhrs/core/fields.py:41
+#: irhrs/core/fields.py:51 irhrs/core/validators.py:214
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: irhrs/core/validators.py:41
+#, python-format
+msgid "%(value)s is less than 1."
+msgstr ""
+
+#: irhrs/core/validators.py:52
+msgid "This field must be a valid Ethnicity."
+msgstr ""
+
+#: irhrs/core/validators.py:63
+msgid "This field must be a valid Religion."
+msgstr ""
+
+#: irhrs/core/validators.py:75
+#, python-brace-format
+msgid "Age must be between {MIN_USER_AGE} and "
+msgstr ""
+
+#: irhrs/core/validators.py:83
+msgid "Invalid birth date. Age must be between "
+msgstr ""
+
+#: irhrs/core/validators.py:96
+msgid "The date must be a past date."
+msgstr ""
+
+#: irhrs/core/validators.py:108
+msgid "This value can not be a past time."
+msgstr ""
+
+#: irhrs/core/validators.py:168
+msgid "Child depth can not be more than 1"
+msgstr ""
+
+#: irhrs/core/validators.py:182
+msgid ""
+"This field must start with a Character. Can only contain space, alphanumeric "
+"and -?&. "
+msgstr ""
+
+#: irhrs/core/validators.py:192
+msgid "Special Characters except '-' are not supported."
+msgstr ""
+
+#: irhrs/core/validators.py:205
+msgid "The field must contain at least one number"
+msgstr ""
+
+#: irhrs/core/validators.py:256
+msgid "Ensure one and only one parameter is setout of {}"
+msgstr ""
+
+#: irhrs/core/validators.py:260
+msgid "Ensure at least one parameter is set out of {}"
+msgstr ""
+
+#: irhrs/core/validators.py:332
+msgid "The field must contain only alphabets."
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/comment.py:26
+msgid "Parent's post is not same as child's post"
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:96
+msgid "Post is already posted, can not be re scheduled"
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:100
+msgid "Can not schedule to past"
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:123
+msgid "This field can not be past time"
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/visibility.py:30
+msgid "Both `organizations` and `divisions` can not be set at once."
+msgstr ""
+
+#: irhrs/noticeboard/utils/like_unlike.py:77
+msgid "Could not like this object"
+msgstr ""
+
+#: irhrs/permission/models/hrs_permisssion.py:12
+msgid "Name"
+msgstr ""
+
+#: irhrs/permission/models/hrs_permisssion.py:14
+msgid "Groups"
+msgstr ""
+
+#: irhrs/permission/models/hrs_permisssion.py:15
+msgid "Permission Code"
+msgstr ""
+
+#: irhrs/permission/models/hrs_permisssion.py:16
+msgid "Description"
+msgstr ""
+
+#: irhrs/permission/models/hrs_permisssion.py:17
+msgid "Category"
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/auth.py:35
+#: irhrs/users/api/v1/serializers/auth.py:52
+#: irhrs/users/api/v1/serializers/auth.py:71
+msgid "User account is disabled."
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/auth.py:69
+msgid "Phone Number is not verified"
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/auth.py:84
+msgid "Couldn't Authenticate With Given Credentials"
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/auth.py:87
+msgid "Must include \"username\" and \"password\"."
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/user_detail.py:53
+msgid "This field can not be empty when marital status is `Married`"
+msgstr ""
+
+#: irhrs/users/api/v1/serializers/user_detail.py:60
+msgid "This field can not be set for `Single` marital status."
+msgstr ""
+
+#: irhrs/users/api/v1/views/user.py:273
+msgid "A reset email has been sent to your email address."
+msgstr ""
+
+#: irhrs/users/api/v1/views/user.py:310
+msgid "RealHRSoft Password Reset Link"
+msgstr ""
+
+#: irhrs/users/models/user.py:24
+msgid "user email"
+msgstr ""
+
+#: irhrs/users/models/user.py:27
+msgid "user username"
+msgstr ""
+
+#: irhrs/users/models/user.py:29
+msgid "First Name"
+msgstr ""
+
+#: irhrs/users/models/user.py:31
+msgid "Middle Name"
+msgstr ""
+
+#: irhrs/users/models/user.py:34
+msgid "Last Name"
+msgstr ""

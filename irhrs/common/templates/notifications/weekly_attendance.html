@@ -1,0 +1,136 @@
+{% load static %}
+{% block message %}
+  {% autoescape off %}
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        text-align: center;
+      }
+    </style>
+    <div class="html-table">
+      {{ message }}
+      <h2 style="text-align: center;">Weekly Attendance Report</h2>
+      <div class="progress-container"
+           style="display: flex; flex-wrap: wrap; padding-bottom: 1rem;">
+        <div class="item1"
+             style="flex-basis: calc(33% - 1rem); flex-grow: 0; flex-shrink: 0; text-align: center; padding: 1.5rem; margin-right: 1rem; background: #F2FCFF; border-radius: 16px;">
+          <p style="color: #00ACDC; text-align: center;">Weekly Worked Hours</p>
+          <p>{{ aggregate_result.total_worked_hours }} Hrs.</p>
+        </div>
+        <div class="item2"
+             style="flex-basis: calc(33% - 1rem); flex-grow: 0; flex-shrink: 0; text-align: center; padding: 1.5rem; margin-right: 1rem; background: #F2FCFF; border-radius: 16px;">
+          <p style="color: #00ACDC; text-align: center;"> Weekly Lost Hours  </p>
+          <p>{{ aggregate_result.total_lost_hours }} Hrs.</p>
+        </div>
+        <div class="item3"
+             style="flex-basis: calc(33% - 1rem); flex-grow: 0; flex-shrink: 0; text-align: center; padding: 1.5rem;  background: #F2FCFF; border-radius: 16px;">
+          <p style="color: #00ACDC; text-align: center;">Weekly Average Punctuality</p>
+          <p>{{ aggregate_result.punctuality }}%</p>
+        </div>
+      </div>
+
+      <table style=" border-radius: 0.5rem; border: 0.5rem solid #f4f4f4;">
+        <thead>
+        <tr style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+          <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4; font-weight: 600; color: #000000;">Date
+          </td>
+          <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4; font-weight: 600; color: #000000;">Punch
+            In/Out
+          </td>
+          <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;font-weight: 600; color: #000000;">Status
+          </td>
+          <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;font-weight: 600; color: #000000;">Worked
+            Hours
+          </td>
+          <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;font-weight: 600; color: #000000;">Leave
+          </td>
+        </tr>
+        </thead>
+        <tbody style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+        <tr style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+          {% for data in table_data %}
+            <tr style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+              {% if data.punch_in %}
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}
+                  <br> {{ data.day_name }}</td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+                  <p>{{ data.punch_in }}</p>
+                  <p>{{ data.punch_out }}</p>
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+                  {% for status in data.status %}
+                    {{ status }}<br>
+                  {% endfor %}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.worked_hours }}</td>
+                {% if data.leave_coefficient == 'No Leave' %}
+                  <td
+                    style=" text-align: center;  font-weight: bold; padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">
+                    -
+                  </td>
+                {% else %}
+                  <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.leave_coefficient }}</td>
+                {% endif %}
+              {% elif data.leave_coefficient == 'Full Leave' %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">{{ data.leave_coefficient }}</p>
+                </td>
+              {% elif data.leave_coefficient == 'First Half' %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">{{ data.leave_coefficient }} Leave, Second Half
+                    Absent</p>
+                </td>
+              {% elif data.leave_coefficient == 'Second Half' %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">First Half Absent, {{ data.leave_coefficient }}
+                    Leave</p>
+                </td>
+              {% elif data.leave_coefficient == 'Credit Hour' %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">Absent, {{ data.leave_coefficient }} Leave</p>
+                </td>
+              {% elif data.day_type in "Offday, Holiday" %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">{{ data.day_type }}</p>
+                </td>
+              {% else %}
+                <td
+                  style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;">{{ data.date }}<br>{{ data.day_name }}
+                </td>
+                <td style="padding: 0.5rem 1rem; border-bottom: 1px solid #f4f4f4;" colspan="4">
+                  <p style=" text-align: center;  font-weight: bold; ">Absent</p>
+                </td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  {% endautoescape %}
+{% endblock %}
+
+

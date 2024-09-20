@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-26 16:50+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings/base.py:176
+msgid "English"
+msgstr "अंग्रेजी"
+
+#: config/settings/base.py:177
+msgid "Nepali"
+msgstr "नेपाली"
+
+#: irhrs/core/fields.py:10
+msgid "A JSON object"
+msgstr "एउटा JSON वस्तु"
+
+#: irhrs/core/fields.py:12 irhrs/core/fields.py:36 irhrs/core/fields.py:41
+#: irhrs/core/fields.py:51 irhrs/core/validators.py:214
+msgid "Value must be valid JSON."
+msgstr "मूल्य मान्य JSON हुनु पर्छ।"
+
+#: irhrs/core/validators.py:41
+#, python-format
+msgid "%(value)s is less than 1."
+msgstr "%(value)s 1 भन्दा कम छ।"
+
+#: irhrs/core/validators.py:52
+msgid "This field must be a valid Ethnicity."
+msgstr "यो क्षेत्र एक मान्य नस्ल हुनुपर्छ।"
+
+#: irhrs/core/validators.py:63
+msgid "This field must be a valid Religion."
+msgstr "यस क्षेत्रमा एक वैध धर्म हुनुपर्छ।"
+
+#: irhrs/core/validators.py:75
+#, python-brace-format
+msgid "Age must be between {MIN_USER_AGE} and "
+msgstr "आयु {MIN_USER_AGE} र बीचमा हुनुपर्दछ"
+
+#: irhrs/core/validators.py:83
+msgid "Invalid birth date. Age must be between "
+msgstr "अवैध जन्म मिति। आयु बीचमा हुनुपर्दछ।"
+
+#: irhrs/core/validators.py:96
+msgid "The date must be a past date."
+msgstr "मिति अतीत मिति हुनुपर्दछ।"
+
+#: irhrs/core/validators.py:108
+msgid "This value can not be a past time."
+msgstr "यो मूल्य अतीत समय हुन सक्दैन।"
+
+#: irhrs/core/validators.py:168
+msgid "Child depth can not be more than 1"
+msgstr "नेस्ट गहिराइ 1 भन्दा बढी हुन सक्दैन"
+
+#: irhrs/core/validators.py:182
+msgid ""
+"This field must start with a Character. Can only contain space, alphanumeric "
+"and -?&. "
+msgstr ""
+"यो क्षेत्र क्यारेक्टरको साथ सुरु हुनु पर्छ। यसमा केवल खाली स्पेस, अल्फान्युमेरिक र - ? & मात्र "
+"हुन सक्छ ।"
+
+#: irhrs/core/validators.py:192
+msgid "Special Characters except '-' are not supported."
+msgstr "'-' बाहेक विशेष क्यारेक्टर समर्थित छैन।"
+
+#: irhrs/core/validators.py:205
+msgid "The field must contain at least one number"
+msgstr "फिल्डमा कम से कम एक नम्बर हुनु पर्दछ"
+
+#: irhrs/core/validators.py:256
+msgid "Ensure one and only one parameter is setout of {}"
+msgstr "सुनिश्चित गर्नुहोस् एक र एक मात्र प्यारामिटर {@} को सेटआउट"
+
+#: irhrs/core/validators.py:260
+msgid "Ensure at least one parameter is set out of {}"
+msgstr "सुनिश्चित गर्नुहोस् कि एक मात्र र एक मात्र प्यारामिटर {} बाट सेट गरिएको छ।"
+
+#: irhrs/core/validators.py:332
+msgid "The field must contain only alphabets."
+msgstr "क्षेत्रमा केवल अक्षरहरू समावेश हुनु पर्दछ।"
+
+#: irhrs/noticeboard/api/v1/serializers/comment.py:26
+msgid "Parent's post is not same as child's post"
+msgstr ""
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:96
+msgid "Post is already posted, can not be re scheduled"
+msgstr "पोस्ट पहिल्यै पोष्ट गरिएको छ, पुन: स्थापित गर्न सकिँदैन"
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:100
+msgid "Can not schedule to past"
+msgstr "विगतमा तालिकाबद्ध गर्न सक्दैन"
+
+#: irhrs/noticeboard/api/v1/serializers/post.py:123
+msgid "This field can not be past time"
+msgstr "यो फिल्ड अतीत समय हुन सक्दैन"
+
+#: irhrs/noticeboard/api/v1/serializers/visibility.py:30
+msgid "Both `organizations` and `divisions` can not be set at once."
+msgstr "दुवै `संगठन` र` विभाजन` एकैचोटि सेट गर्न सकिँदैन।"
+
+#: irhrs/noticeboard/utils/like_unlike.py:77
+msgid "Could not like this object"
+msgstr "यो वस्तु मनपराउन सकिएन ।"
+
+#: irhrs/permission/models/hrs_permisssion.py:12
+msgid "Name"
+msgstr "नाम"
+
+#: irhrs/permission/models/hrs_permisssion.py:14
+msgid "Groups"
+msgstr "समूहहरू"
+
+#: irhrs/permission/models/hrs_permisssion.py:15
+msgid "Permission Code"
+msgstr "अनुमति कोड"
+
+#: irhrs/permission/models/hrs_permisssion.py:16
+msgid "Description"
+msgstr "विवरण"
+
+#: irhrs/permission/models/hrs_permisssion.py:17
+msgid "Category"
+msgstr "वर्ग"
+
+#: irhrs/users/api/v1/serializers/auth.py:35
+#: irhrs/users/api/v1/serializers/auth.py:52
+#: irhrs/users/api/v1/serializers/auth.py:71
+msgid "User account is disabled."
+msgstr "प्रयोगकर्ता खाता अक्षम गरिएको छ।"
+
+#: irhrs/users/api/v1/serializers/auth.py:69
+msgid "Phone Number is not verified"
+msgstr "फोन नम्बर प्रमाणिकरण गरिएको छैन।"
+
+#: irhrs/users/api/v1/serializers/auth.py:84
+msgid "Couldn't Authenticate With Given Credentials"
+msgstr "ददिइएको श्रेयहरूसँग प्रमाणित गर्न सकेन।"
+
+#: irhrs/users/api/v1/serializers/auth.py:87
+msgid "Must include \"username\" and \"password\"."
+msgstr "\"प्रयोगकर्ता नाम\" र \"पासवर्ड\" सामेल हुनु पर्छ।"
+
+#: irhrs/users/api/v1/serializers/user_detail.py:53
+msgid "This field can not be empty when marital status is `Married`"
+msgstr "यदि वैवाहिक स्थिति `विवाहित` होभने यो क्षेत्र खाली हुन सक्दैन।"
+
+#: irhrs/users/api/v1/serializers/user_detail.py:60
+#, fuzzy
+msgid "This field can not be set for `Single` marital status."
+msgstr "यस क्षेत्र `एकल` वैवाहिक स्थितिको लागि सेट गर्न सकिँदैन।"
+
+#: irhrs/users/api/v1/views/user.py:273
+msgid "A reset email has been sent to your email address."
+msgstr "रिसेट इमेल तपाईंको इमेल ठेगानामा पठाइएको छ।"
+
+#: irhrs/users/api/v1/views/user.py:310
+msgid "RealHRSoft Password Reset Link"
+msgstr "रियल एच.आर. सफ्ट पासवर्ड रीसेट लिङ्क"
+
+#: irhrs/users/models/user.py:24
+msgid "user email"
+msgstr "प्रयोगकर्ता इमेल"
+
+#: irhrs/users/models/user.py:27
+msgid "user username"
+msgstr "प्रयोगकर्तानाम"
+
+#: irhrs/users/models/user.py:29
+msgid "First Name"
+msgstr "पहिलो नाम"
+
+#: irhrs/users/models/user.py:31
+msgid "Middle Name"
+msgstr "बीचको नाम"
+
+#: irhrs/users/models/user.py:34
+msgid "Last Name"
+msgstr "थर"

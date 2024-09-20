@@ -1,0 +1,275 @@
+{% load recruitment_tags %}
+
+<style>
+  .bold {
+    font-weight: bold;
+  }
+
+  .mr-10 {
+    margin-right: 10px;
+  }
+</style>
+
+{% if table %}
+  <style>
+    .report, .report th, .report td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .report th, .report td {
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+  <div>
+    {% if table == 'preliminary_shortlisted_candidate' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Candidate</th>
+          <th>Overall Evaluation Score</th>
+          <th>Ranking</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td>{{ applicant.hr_score_percentage }}%</td>
+            {% if forloop.first %}
+              <td rowspan='{{ applicant_list|length }}'>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'cv_scoring_criteria_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>Evaluation Factors</th>
+          <th>Scoring Criteria</th>
+          <th>Total Score</th>
+        </tr>
+        <tr>
+          <td>Relevancy of Experience</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Education Level</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Experience in Field</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2">Maximum Score</th>
+          <th></th>
+        </tr>
+      </table>
+    {% elif table == 'final_shortlist_by_hiring_manager_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Candidate</th>
+          <th>Overall Evaluation Score</th>
+          <th>Ranking</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td>{{ applicant.hiring_manager_score }}%</td>
+            {% if forloop.first %}
+              <td rowspan='{{ applicant_list|length }}'>
+              </td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'shortlisted_candidate_detail_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Candidate</th>
+          <th>Category</th>
+          <th>HR Score</th>
+          <th>Hiring Manager Score</th>
+          <th>Cv</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td>{{ applicant.hr_category }}</td>
+            <td>{{ applicant.hr_score_percentage }}%</td>
+            <td>{{ applicant.hiring_manager_score_percentage }}%</td>
+            <td>
+              <a href="{{ applicant.cv }}" target="_blank">Cv</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'application_data_interpretation_table' %}
+      <table class="report">
+        <tr>
+          <th colspan="3">
+            Position:Outreach Communication Assistant({{ organization_name }})
+          </th>
+        </tr>
+        <tr>
+          <th colspan="2">Criteria</th>
+          <th rowspan="2" style="width: 15%">No. of Candidates</th>
+        </tr>
+        <tr>
+          <td style="width: 25%">Particulars</td>
+          <td>Explanation</td>
+        </tr>
+        <tr>
+          <td class="bold">Total Applicants</td>
+          <td>
+            Applications received at {{ organization_name }} with submission of all required documents and information as requested
+          </td>
+          <td class="bold">{{ total_applicants }}</td>
+        </tr>
+        <tr>
+          <td class="bold">
+            Total Applicants after removal of duplication
+          </td>
+          <td>
+            There were 0 applicants who sent email out twice
+          </td>
+          <td class="bold">{{ total_applicants }}</td>
+        </tr>
+        <tr>
+          <td class="bold">
+            Eligible Applicants (Long List)
+          </td>
+          <td>
+            The candidate’s meeting the eligibility criteria mentioned in Position Description
+          </td>
+          <td class="bold">{{ long_list_eligible_candidate }}</td>
+        </tr>
+        <tr>
+          <td class="bold">
+            Shortlisted Applicants (Preliminary ShortList)
+          </td>
+          <td>
+            The candidate’s meeting the eligibility criteria mentioned in Position Description and scoring highest
+          </td>
+          <td class="bold">{{ hiring_manager_shortlisted }}</td>
+        </tr>
+        <tr>
+          <td class="bold">
+            Shortlisted Applicants (Final ShortList)
+          </td>
+          <td>
+            The candidate’s meeting the eligibility criteria and recommended for further assessment by hiring manager
+          </td>
+          <td class="bold">{{ hiring_manager_shortlisted }}</td>
+        </tr>
+        <tr>
+          <td class="bold">
+            Applicants participating in Written Assessment and Interview
+          </td>
+          <td>
+            The {{ hiring_manager_shortlisted }} eligible candidates were invited out of
+            which only {{ interview_completed }} completed the whole interview.
+          </td>
+          <td class="bold">{{ interview_completed }}</td>
+        </tr>
+      </table>
+    {% elif table == 'written_assessment_and_pre_screening_interview_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Name of candidate</th>
+          <th>Preferred District</th>
+          <th>Assessment Weightage({{ written_score }}%)</th>
+          <th>Interview Scores(on {{ interview_total_score }})</th>
+          <th>Interview Weightage({{ interview_score }}%)</th>
+          <th>Total Score</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td></td>
+            {% reduce_percentage applicant.assessment_score_percentage written_score as final_written_score_percentage %}
+            <td>{{ final_written_score_percentage }}</td>
+            <td>{{ final_interview_score }}</td>
+
+            {% reduce_percentage applicant.final_interview_score_percentage interview_score as final_interview_score_percentage %}
+            <td>{{ final_interview_score_percentage }}</td>
+            <td>{% sum_float final_written_score_percentage final_interview_score_percentage %}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'final_structured_interview_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Name of Candidate</th>
+          <th>Points in percentage(%)</th>
+          <th>New Ranking</th>
+        </tr>
+        {% for applicant in applicant_list|dictsort:"final_interview_score_percentage" %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td>{{ applicant.final_interview_score_percentage }}</td>
+            {% if applicant.rostered %}
+              <td>Backup</td>
+            {% else %}
+              <td>{{ forloop.counter }}</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'recommended_candidate_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Districts</th>
+          <th>Duty Station and coverage</th>
+          <th>Selected Candidate</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td></td>
+            <td></td>
+            <td>{{ applicant.candidate_name }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% elif table == 'salary_declaration_table' %}
+      <table class="report" style="width:100%">
+        <tr>
+          <th>SN</th>
+          <th>Candidate Name</th>
+          <th>Salary</th>
+        </tr>
+        {% for applicant in applicant_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ applicant.candidate_name }}</td>
+            <td>{{ applicant.salary }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+  </div>
+{% endif %}
+{% if pre_screening_questions %}
+  {% for question in pre_screening_questions %}
+    <div>
+    <span class="mr-10">
+      {{ question.title | safe }} [{{ question.score }}]
+    </span>
+    </div>
+  {% endfor %}
+{% endif %}

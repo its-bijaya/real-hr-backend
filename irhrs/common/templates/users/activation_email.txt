@@ -1,0 +1,9 @@
+Dear {{full_name}},
+
+Your RealHRSoft account has been created successfully.Go to
+{{activation_link}}
+to set password and activate your account.
+
+If you did not request for your password reset, please ignore this message.
+
+RealHRSoft

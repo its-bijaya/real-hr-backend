@@ -1,0 +1,45 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block title %} Import Leave Balance {{block.super}}{% endblock %}
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+
+{% block content %}
+<div id="content-main">
+  <h1>Import Leave Balance</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Import" />
+  </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+  <div class="module">
+    <h2>Actions</h2>
+    <ul>
+      <li> <a href="#" id="download_sample_file" onclick="downloadSampleFile()">Download Sample File</a> <small>
+          <caption>(Select organization and download sample)</caption>
+        </small></li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  function downloadSampleFile() {
+    const organizationId = document.querySelector("#id_organization").value
+    if (!organizationId) {
+      alert("Please select organization first.")
+    } else {
+      url = `{% url 'leave_admin:import_leave_balance_sample' organization_id=123 %}`
+      url = url.replace(123, organizationId)
+      location.href = url
+    }
+  }
+
+</script>
+{% endblock%}

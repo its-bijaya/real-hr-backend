@@ -1,0 +1,89 @@
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+
+<script>
+    
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(e) { // e.data has client_id and session_state
+
+        // Validate message origin
+        var client_id = e.data.split(' ')[0];
+        var session_state = e.data.split(' ')[1];
+        var salt = ''
+        if (session_state){
+            var salt = session_state.split('.')[1];
+        }
+
+
+        // if message syntactically invalid
+        //     postMessage('error', e.origin) and return
+
+        // get_op_browser_state() is an OP defined function
+        // that returns the browser's login status at the OP.
+        // How it is done is entirely up to the OP.
+        var opbs = getCookie('auth._refresh_token.local');
+
+        stat = 'op:loggedOut-rp:loggedOut'
+
+        if (!session_state && opbs){
+            stat = 'op:loggedIn-rp:loggedOut'
+        }
+        else if (!session_state && !opbs){
+            stat = 'op:loggedOut-rp:loggedOut'
+        }
+
+        else if (session_state && !opbs){
+            stat = 'op:loggedOut-rp:loggedIn'
+        }
+
+        else if (session_state && opbs){
+            var ss = CryptoJS.SHA256(client_id + ' ' + e.origin + ' ' +
+                opbs + ' ' + salt) + "." + salt;
+
+            var stat = '';
+            if (session_state == ss) {
+                stat = 'op:loggedIn-rp:loggedIn-ok';
+            } else {
+                stat = 'op:loggedIn-rp:loggedIn-bad';
+            }
+        }
+
+       
+        // Here, the session_state is calculated in this particular way,
+        // but it is entirely up to the OP how to do it under the
+        // requirements defined in this specification.
+
+        // var ss = CryptoJS.SHA256(client_id + ' ' + e.origin + ' ' +
+        //     opbs + ' ' + salt) + "." + salt;
+
+        // var stat = '';
+        // if (session_state == ss) {
+        //     stat = 'unchanged';
+        // } else {
+        //     stat = 'changed';
+        // }   
+        
+
+        e.source.postMessage(stat, e.origin);
+    };
+</script>
+
+</html>

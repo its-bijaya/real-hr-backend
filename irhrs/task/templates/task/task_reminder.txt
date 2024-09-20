@@ -1,0 +1,6 @@
+Dear {{full_name}},
+
+{{ greeting }} have requested to remind you of {{ task_title }}.Go to
+{{task_link}}
+
+RealHRSoft

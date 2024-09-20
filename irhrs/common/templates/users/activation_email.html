@@ -1,0 +1,22 @@
+{% extends "email_base.html" %}
+{% block title %}Account Activation{% endblock %}
+{% block heading %}ACTIVATE EMAIL{% endblock %}
+{% block message %}
+        <h4> Hi, {{ full_name }} !</h4>
+        To complete email verification, please click the button below.
+        <div class="center" style="margin-top: 10px; margin-bottom: 20px">
+            <a class="button" href="{{ activation_link }}" style="color: rgb(255, 255, 255)">
+                Verify Your Email</a>
+        </div>
+        <p>
+            Or verify using this link: <a
+                href="{{ activation_link }}">
+                {{ activation_link }}</a>
+        </p>
+        <p>
+            <small class="disp--block">
+                If you did not request for your account verification, please
+                ignore this message.
+            </small>
+        </p>
+{% endblock %}

@@ -1,0 +1,210 @@
+#+TITLE: Test setup details for form reports
+
+* Users:
+
+User A - Rajesh Shrestha
+User B - Mahesh Manandhar
+User C - Aayush Pudasaini
+
+* Test data will look as follows:
+
+
+** Section A
+
+*** 'multiple-mcq'
+(_Question: Which of these places have you visited?_)
+
+*choices*:
++ Kathmandu - User A (Count: 1)
++ Bhaktapur - User B User C (Count: 2)
++ Lalitpur  - User A User B User C (Count 3)
++ Gorkha    - Blank (Count 0)
+
+*** 'single-mcq'
+
+(_Question: Choose one favorite food_)
+
+*choices*:
++ Ice-cream - User A (Count: 1)
++ Rice - User B User C (Count: 2)
++ Coffee - Blank (Count 0)
+
+# ** 'linear-scale' (No choice present)
+
+# (_Question: How much do you like juice?_)
+
+#  *choices*
+#  0 (count: 1)
+#  1 (count: 0)
+#  2 (count: 0)
+#  3 (count: 2)
+
+*** 'short-text'
+
+(_Question: What is your name?_)
+
+*** 'long-text'
+
+(_Question: Write a paragraph about the sun._)
+
+*** 'rating-scale'
+(_Question: How much do you like chocolate?_)
+
+ *choices*
+ 1 (count: 0)
+ 2 (count: 0)
+ 3 (count: 2) (user A, B)
+ 4 (count: 1) (user c)
+ 5 (count: 0)
+
+
+** Section B
+
+*** 'date'
+(_Question: When did you last come to office?_)
+
+ *choices*
+ 2021-01-01 (count: 2) (User A, B)
+ 2021-01-02 (count: 0)
+ 2021-01-03 (count: 0)
+
+*** 'time'
+(_Question: What time did you punch in at?_)
+ *choices*
+5:30 (count 1) (User A)
+5:31 (count 2) (User B C)
+
+*** 'duration'
+(_Question: How much time will it take to complete form reports?(in hr:min format)_)
+*choices*
+23:40 (count 1) (User A)
+23:40 (count 2) (User B C)
+
+*** 'date-time'
+(_Question: When does the world cup final start?_)
+*choices*
+2021-01-01 05:40 (count 1) (User A)
+2021-01-01 05:40 (count 1) (User B)
+
+*** 'date-without-year'
+(_Question: In which day did the last world cup final take place?_)
+*choices*
+01-01 (count 1) (User A)
+02-01 (count 1) (User B)
+
+*** 'date-time-without-year'
+*choices*
+(_Question: In which day and time did the last world cup final take place?_)
+01-01 05:40 (count 1) (User B)
+01-01 07:30 (count 1) (User C)
+
+*** file-upload
+
+(_Question: Upload doctors appointment_)
+
+
+
+*** multiple choice grid
+
+(_Question: Answer some questions about yourself._)
+
+Rate the following people(choose only one):
+
+#+begin_src json
+extra_data = {
+    "rows": ["Ram", "Shyam", "Hari"],
+    "columns": ["Wise", "Stupid", "Cool"]
+}
+#+end_src
+
+#+begin_src json
+answer_json = {
+    "answers":  [
+            ["Ram   ", ["Wise"],
+            ["Shyam", ["Stupid"],
+            ["Hari", ["Cool"],
+        ]
+}
+#+end_src
+
+User A:
+#+begin_src python
+{
+    "answers": {
+        "Ram": ["Wise"],
+        "Shyam": ["Wise"],
+        "Hari": []
+    }
+},
+#+end_src
+
+User B:
+#+begin_src python
+{
+    "answers": {
+        "Ram": ["Stupid"],
+        "Shyam": ["Stupid"],
+        "Hari": ["Stupid"]
+    }
+},
+#+end_src
+
+User C:
+#+begin_src python
+{
+    "answers": {
+        "Ram": [],
+        "Shyam": [],
+        "Hari": []
+    }
+},
+#+end_src
+
+
+
+*** checkbox grid
+
+Choices: Wise, Friendly, Communicative Stupid
+
+Rate the following people:
+
+#+begin_src json
+extra_data = {
+    "rows": ["Ram", "Shyam", "Hari"],
+    "columns": ["Wise", "Stupid", "Cool"],
+    "all_rows_mandatory": True,
+}
+#+end_src
+
+User A
+#+begin_src python
+{
+    "answers": {
+        "Ram": ["Wise", "Stupid", "Cool"],
+        "Shyam": ["Wise", "Cool"],
+        "Hari": ["Cool"],
+    }
+},
+#+end_src
+
+User B:
+#+begin_src python
+{
+    "answers": {
+        "Ram": ["Wise", "Stupid", "Cool"],
+        "Shyam": ["Wise", "Stupid", "Cool"],
+        "Hari": ["Wise", "Stupid", "Cool"],
+    }
+},
+#+end_src
+
+User C:
+#+begin_src python
+{
+    "answers": {
+        "Ram": [],
+        "Shyam": [],
+        "Hari": []
+    }
+},
+#+end_src

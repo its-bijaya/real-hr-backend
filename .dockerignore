@@ -1,0 +1,46 @@
+.idea/
+.vscode/
+
+*.pyc
+db.sqlite3
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# C extensions
+*.so
+
+#setting file
+#config/settings/*env.py
+
+#jenkins report
+reports/
+*tests_report*
+
+!irhrs/attendance/api/v1/reports/
+!irhrs/leave/api/v1/reports/
+# jupyter notebook
+*.ipynb
+.ipynb_checkpoints
+
+
+#Logs if in development phase are placed inside the project directory
+logs/*
+/.gtm/
+
+
+# Virtual Environment
+.venv/
+
+.env
+.vim/
+.pylintrc
+
+# Code Coverage
+.coverage
+
+# Compile Helper
+compile_edited_files.py
+
+# Compiled Folder
+app-compile

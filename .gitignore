@@ -1,0 +1,67 @@
+.idea/
+.vscode/
+
+*.pyc
+db.sqlite3
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# C extensions
+*.so
+
+#setting file
+config/settings/*env.py
+
+#jenkins report
+reports/
+*tests_report*
+
+!irhrs/attendance/api/v1/reports/
+!irhrs/leave/api/v1/reports/
+# jupyter notebook
+*.ipynb
+.ipynb_checkpoints
+
+#Logs if in development phase are placed inside the project directory
+logs/*
+/.gtm/
+
+
+# Virtual Environment
+.venv/
+
+.env
+docker/env_files
+.vim/
+.pylintrc
+
+# Code Coverage
+.coverage
+
+# Compile Helper
+compile_edited_files.py
+
+# Compiled Folder
+app-compile
+
+private_key.pem
+public_key.pem
+authorized_keys.json
+venv/
+# Create a symbolic link with "ln -s path/to/.venv venv"
+venv
+
+# Payroll plugin related to be ignored files
+frontend/dist/
+irhrs/payroll/tests/test_files/plugin_test_files/dist/
+irhrs/payroll/plugins/
+irhrs/payroll/tests/test_files/plugin_test_files/plugin.c
+
+# docker env files
+docker/env_files/*
+
+
+# Development Circus File
+dev.ini
+

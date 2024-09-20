@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="telephone=no" name="format-detection">
+</head>
+<body style="margin: 0; padding: 0;">
+<div class="main"
+     style="font-family: 'Poppins', sans-serif; display: grid; padding: 2rem; background: #F2F2F3; border-radius: 2rem; gap:1rem; max-width: 600px; margin: auto;">
+  <img class="logo"
+       src="https://dchbbn.stripocdn.email/content/guids/CABINET_4f456932450d01c4a92aaab94635996d07f57bd99799228b692fecd7d57389c0/images/logowithtag.png"
+       style="height: 4rem;">
+  <div class="sub"
+       style="display: grid; padding: 1rem; background: #FFFFFF; border-radius: 1.5rem; gap:1.5rem; max-width: 540px;">
+    <h2
+      style="Margin:0; line-height:28px; mso-line-height-rule:exactly; font-family:Arial, sans-serif; font-size:23px; font-style:normal; font-weight:bold; color:#1a4ad2">
+      <strong>
+        {% block subject %}{{ subject }}{% endblock %}
+      </strong>
+    </h2>
+    {% block message %}
+    {% endblock %}
+    {% block footer_message %}
+      {{ footer_message }}
+    {% endblock %}
+  </div>
+  <hr style="color: #f4f4f4;">
+  <p class="footer" style="font-size: 0.8rem; color:#666666;">
+    This email was sent to you as a registered employee of realhrsoft.com.<br>
+    Use of the service and website is subject to our <a href="https://realhrsoft.com/privacy-policy">Privacy Policy.</a><br><br>
+    © 2023 RealHRsoft, All rights reserved
+  </p>
+</div>
+</body>
+</html>

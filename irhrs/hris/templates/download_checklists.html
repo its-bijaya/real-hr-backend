@@ -1,0 +1,151 @@
+{% load static full_url %}
+{% static 'icons/password.png' as password_png %}
+{% static 'logos/logo-with-tag.png' as logo_with_tag_png %}
+{% static 'logos/facebook.png' as fb_icon_png %}
+{% static 'logos/google-plus.png' as google_plus_png %}
+{% static 'logos/twitter.png' as twitter_png %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        body {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            line-height: 1.5;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 12pt;
+        }
+
+        .container {
+            padding: 2em;
+        }
+
+        .top {
+            background: #0a1124;
+            color: #eaeaec;
+        }
+
+        .center {
+            text-align: center;
+            width: 70%;
+            margin: auto;
+        }
+
+        .center * {
+            margin: auto;
+            text-align: center;
+        }
+
+        .disp--block {
+            display: block;
+        }
+
+        .logo {
+            width: 13em;
+            height: auto;
+        }
+
+        .icon {
+            height: 3em;
+            width: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            width: 70%;
+            margin: auto;
+            padding-bottom: 3em;
+        }
+
+        .bottom .container {
+            margin-top: 1em;
+        }
+
+        a {
+            color: #448edd;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: rgb(33, 150, 243);
+            align-items: center;
+            color: rgb(255, 255, 255) !important;
+            padding: 0.5em;
+            font-size: 1em;
+            display: inline-block;
+        }
+
+        .muted {
+            color: #7c7c7c;
+            font-size: 10pt;
+        }
+
+        hr {
+            -moz-border-bottom-colors: none;
+            -moz-border-image: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            border-color: #aaaaaa;
+            border-style: solid none;
+            border-width: 1px 0;
+            margin: 18px 0;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .center, .message {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="top container ">
+    <div class="center">
+        <img src="{% get_full_url logo_with_tag_png %}"
+             class="logo disp--block" />
+    </div>
+</div>
+<div class="bottom container">
+    <div class="message">
+        <h1>{{ name }}</h1>
+        {% for template in templates %}
+            <h1><input type="checkbox">{{ template.title }}</h1>
+            {% for checklist in template.checklists %}
+                <h5>
+                    <input type="checkbox">
+                    {{ checklist.title }}
+                </h5>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="muted center">
+        {% block footer_content %}
+        <h4>Need Help?</h4>
+        <p>Please send any feedback or bug reports to realhrsoft@gmail.com</p>
+        <hr/>
+        <p>Ganpati Bhawan, Min Bhawan, Main Road Kathmandu Nepal</p>
+        <p>+977 14106700</p>
+        <p>info@realhrsoft.com</p>
+        {% endblock %}
+        <div>
+            <a href="https://facebook.com">
+                <img class="icon" src="{% get_full_url fb_icon_png %}" />
+            </a>
+            <a href="https://plus.google.com">
+                <img class="icon" src="{% get_full_url google_plus_png %}" />
+            </a>
+            <a href="https://twitter.com">
+                <img class="icon" src="{% get_full_url twitter_png %}" />
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

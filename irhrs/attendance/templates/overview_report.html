@@ -1,0 +1,34 @@
+{% extends 'email_base.html' %}
+
+
+{% block message %}
+
+<style>
+    thead{
+        background-color: #999999;
+        color: white;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {background-color: #f2f2f2;}
+
+</style>
+<h1>
+    {{ report_type }} overview
+</h1>
+
+<h2>
+    {{ full_name }}
+</h2>
+
+{% if date_range %}
+    <h2> {{ date_range }} </h2>
+{% endif %}
+
+{% autoescape off %}
+
+    {{ datatable }}
+
+{% endautoescape %}
+
+{% endblock %}

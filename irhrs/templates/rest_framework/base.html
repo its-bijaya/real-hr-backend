@@ -1,0 +1,166 @@
+{% extends "rest_framework/base.html" %}
+{% block content %}
+{% if debug %}
+    <style>
+        table tr th {
+            font-weight: bold;
+            color: red;
+            border: 0.5px solid blueviolet;
+            padding: 10px;
+        }
+        table tr td{
+            border: 0.5px solid blueviolet;
+            color: green;
+        }
+        table tr td strong{
+            color: black;
+        }
+        td {
+            padding: 10px;
+        }
+    </style>
+<div id="debug">
+        <h1>
+            Permissions
+        </h1>
+        {% for perm in view.permission_classes %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permission To</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>Complete Permissions To</strong>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.rw %}
+                                <li>
+                                {{ definition.code }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.rw %}
+                                <li>{{ definition.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Allow Write To</strong>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.w %}
+                                <li>{{ definition.code }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.w %}
+                                <li>{{ definition.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Allow Read To</strong>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.r %}
+                                <li>{{ definition.code }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.r %}
+                                <li>{{ definition.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Allow Edit To</strong>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.e %}
+                                <li>{{ definition.code }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for definition in perm.description.e %}
+                                <li>{{ definition.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+
+    <h2>Database Queries</h2>
+    <p>
+        {{ sql_queries|length }} Quer{{ sql_queries|pluralize:"y,ies" }}
+        {% ifnotequal sql_queries|length 0 %}
+        (<span style="cursor: pointer;"
+               onclick="var s=document.getElementById('debugQueryTable').style;s.display=s.display=='none'?'':'none';this.innerHTML=this.innerHTML=='Show'?'Hide':'Show';">Show</span>)
+        {% endifnotequal %}
+    </p>
+    <table id="debugQueryTable" style="display: none;" class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Structured Query Language</th>
+            <th scope="col">Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for query in sql_queries %}
+        <tr class="">
+            <td scope="row">{{ forloop.counter }}</td>
+            <td>{{ query.sql|escape }}</td>
+            <td>{{ query.time }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{{ block.super }}
+{% endblock %}
+
+{% block style %}
+
+{{ block.super }}
+<style>
+    {%  if response.status_code == 200 %}
+        .str {
+            color: green;
+        }
+        .kwd {
+            color: red;
+        }
+    {% endif %}
+</style>
+
+{% endblock %}

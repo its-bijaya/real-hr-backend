@@ -1,0 +1,982 @@
+[
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/delete groups and permissions",
+      "code": "1.00",
+      "description": "",
+      "organization_specific": false,
+      "category": "Admin"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has complete permission in Organization.",
+      "code": "2.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/read/update Organization Settings.",
+      "code": "2.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view Organization Settings.",
+      "code": "2.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view Organization Reports.",
+      "code": "2.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can add Organization Documents.",
+      "code": "2.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view/update application Settings.",
+      "code": "2.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can update/create mission and vision for organization.",
+      "code": "2.06",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view fiscal year for organization.",
+      "code": "2.07",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update holidays.",
+      "code": "2.08",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update Organization ethics.",
+      "code": "2.09",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete office equipments.",
+      "code": "2.10",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/delete division.",
+      "code": "2.11",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete employment type.",
+      "code": "2.12",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete job title.",
+      "code": "2.13",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete branch.",
+      "code": "2.14",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete bank detail for organization.",
+      "code": "2.15",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can set template for organization.",
+      "code": "2.16",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/delete meeting room.",
+      "code": "2.17",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete employment level.",
+      "code": "2.18",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/view/delete Knowledge, Skill, Ability and Other Attributes.",
+      "code": "2.19",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update user profile",
+      "code": "3.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "User"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has complete permission in HRIS.",
+      "code": "4.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view HRIS Reports.",
+      "code": "4.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View ID Card and its settings.",
+      "code": "4.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/View/Edit HRIS Contract related settings.",
+      "code": "4.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/View/Edit Task Templates regarding On-Boarding/Off-Boarding/Employment Review.",
+      "code": "4.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/View/Edit Letter Templates regarding On-Boarding/Off-Boarding/Employment Review.",
+      "code": "4.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/View/Edit Separation Type.",
+      "code": "4.06",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/View/Edit Employment Review.",
+      "code": "4.07",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Approve/Deny Change Requests.",
+      "code": "4.08",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Import Employees.",
+      "code": "4.09",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can On Board Employee.",
+      "code": "4.10",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Create Employment Reviews (promotion/demotion)",
+      "code": "4.11",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Off board employees.",
+      "code": "4.12",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign supervisor",
+      "code": "4.13",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign KSAO.",
+      "code": "4.14",
+      "description": "",
+      "organization_specific": true,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has permissions in attendance.",
+      "code": "5.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view Attendance Reports.",
+      "code": "5.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can update Attendance Devices",
+      "code": "5.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/delete Work Shifts.",
+      "code": "5.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create overtime settings.",
+      "code": "5.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign individual attendance settings.",
+      "code": "5.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign Work Shift to employees.",
+      "code": "5.06",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Assign Overtime to User.",
+      "code": "5.07",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Import Attendance",
+      "code": "5.08",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can perform Offline Attendance.",
+      "code": "5.09",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can act on adjustment requests.",
+      "code": "5.10",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can act on overtime claims.",
+      "code": "5.11",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can act on attendance travel requests.",
+      "code": "5.12",
+      "description": "",
+      "organization_specific": true,
+      "category": "Attendance"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has permissions in leave",
+      "code": "6.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Leave"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view Leave Reports.",
+      "code": "6.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can add/edit/update Master Settings.",
+      "code": "6.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign leave to users.",
+      "code": "6.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can grant offline leave.",
+      "code": "6.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view/edit leave balance for users.",
+      "code": "6.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can View/Approve/Deny Leave Requests.",
+      "code": "6.06",
+      "description": "",
+      "organization_specific": true,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can update/delete any ones post comments",
+      "code": "7.00",
+      "description": "",
+      "organization_specific": false,
+      "category": "Noticeboard"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Task related HR permissions",
+      "code": "8.00",
+      "description": "",
+      "organization_specific": false,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can generate/download task report.",
+      "code": "8.01",
+      "description": "",
+      "organization_specific": false,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can approve task.",
+      "code": "8.02",
+      "description": "",
+      "organization_specific": false,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create task project.",
+      "code": "8.04",
+      "description": "",
+      "organization_specific": false,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Report Build Permission",
+      "code": "9.00",
+      "description": "",
+      "organization_specific": false,
+      "category": "Builder"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has All Access to Common Organization Settings.",
+      "code": "10.00",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view System Email Logs.",
+      "code": "10.02",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View ID Card Template and its settings.",
+      "code": "10.03",
+      "description": "",
+      "organization_specific": false,
+      "category": "HRIS"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View common bank and its settings.",
+      "code": "10.04",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View email template and its settings.",
+      "code": "10.05",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View holiday category and its settings.",
+      "code": "10.06",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View document category and its settings.",
+      "code": "10.07",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View religion and ethnicity.",
+      "code": "10.08",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add/Edit/View equipment category and its settings.",
+      "code": "10.09",
+      "description": "",
+      "organization_specific": false,
+      "category": "Organization"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has full access in Payroll.",
+      "code": "11.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Create/Update Payroll Settings.",
+      "code": "11.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Add, Edit, Delete Payroll Packages or Headings",
+      "code": "11.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Assign Payroll Packages or Headings",
+      "code": "11.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Generate Payroll",
+      "code": "11.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Assign Rebate in Payroll.",
+      "code": "11.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can View Payroll Reports.",
+      "code": "11.06",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Hold Generated Payroll.",
+      "code": "11.07",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can access all setting of advance salary.",
+      "code": "11.08",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view/generate advance salary.",
+      "code": "11.09",
+      "description": "",
+      "organization_specific": true,
+      "category": "Payroll"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can perform operations regarding result area and core task",
+      "code": "12.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/update/list/delete result area and core task",
+      "code": "12.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign result area and core task",
+      "code": "12.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Task"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has Complete Permission in Assessment.",
+      "code": "13.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Create Assessments, Sections, etc.",
+      "code": "13.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Assign assessments to users.",
+      "code": "13.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can Review and rate answered assessments.",
+      "code": "13.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view assessment scores and send user to a training.",
+      "code": "13.04",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can attach questions to assessment sections.",
+      "code": "13.05",
+      "description": "",
+      "organization_specific": true,
+      "category": "Assessment"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has complete permission in Training.",
+      "code": "14.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Training"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create Trainings.",
+      "code": "14.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Training"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can assign users to trainings.",
+      "code": "14.02",
+      "description": "",
+      "organization_specific": true,
+      "category": "Training"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can create/modify Trainer's Profile.",
+      "code": "14.03",
+      "description": "",
+      "organization_specific": true,
+      "category": "Training"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Has complete permission in Questionnaire.",
+      "code": "15.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Questionnaire"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can view Questions.",
+      "code": "15.01",
+      "description": "",
+      "organization_specific": true,
+      "category": "Questionnaire"
+    }
+  },
+  {
+    "model": "permission.hrspermission",
+    "fields": {
+      "name": "Can perform overall recruitment permission",
+      "code": "16.00",
+      "description": "",
+      "organization_specific": true,
+      "category": "Recruitment"
+    }
+  }
+]

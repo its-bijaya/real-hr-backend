@@ -1,0 +1,8 @@
+-r base.txt
+circus
+chaussette
+#Twisted[tls,http2]
+sentry-sdk==0.6.9
+django-storages==1.7.1
+boto3==1.9.173
+

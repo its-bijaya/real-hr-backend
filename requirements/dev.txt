@@ -1,0 +1,10 @@
+-r base.txt
+django-debug-toolbar==3.2.4
+django-rest-swagger==2.2.0
+ipython
+factory-boy==3.2.0
+coverage
+tblib
+# for pre commit hook
+flake8
+flake8-colors

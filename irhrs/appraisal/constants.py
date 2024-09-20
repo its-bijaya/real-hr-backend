@@ -1,0 +1,115 @@
+IDLE = 'Idle'
+ACTIVE = 'Active'
+CANCELED = 'Canceled'
+COMPLETED = 'Completed'
+SLOT_STATUS = (
+    (IDLE, IDLE),
+    (ACTIVE, ACTIVE),
+    (CANCELED, CANCELED),
+    (COMPLETED, COMPLETED),
+)
+SELF_APPRAISAL = 'Self Appraisal'
+SUBORDINATE_APPRAISAL = 'Subordinate Appraisal'
+PEER_TO_PEER_FEEDBACK = 'Peer To Peer Feedback'
+SUPERVISOR_APPRAISAL = 'Supervisor Appraisal'
+REVIEWER_EVALUATION = 'Reviewer Evaluation'
+
+APPRAISAL_TYPE = (
+    (SELF_APPRAISAL, SELF_APPRAISAL),
+    (SUBORDINATE_APPRAISAL, SUBORDINATE_APPRAISAL),
+    (PEER_TO_PEER_FEEDBACK, PEER_TO_PEER_FEEDBACK),
+    (SUPERVISOR_APPRAISAL, SUPERVISOR_APPRAISAL),
+    (REVIEWER_EVALUATION, REVIEWER_EVALUATION),
+)
+
+THREE_SIXTY_PERFORMANCE_APPRAISAL = "Three Sixty Performance Appraisal"
+KEY_ACHIEVEMENTS_AND_RATING = "Key Achievements And Rating"
+SUB_PERFORMANCE_APPRAISAL_TYPE = (
+    (THREE_SIXTY_PERFORMANCE_APPRAISAL, THREE_SIXTY_PERFORMANCE_APPRAISAL),
+    (KEY_ACHIEVEMENTS_AND_RATING, KEY_ACHIEVEMENTS_AND_RATING)
+)
+
+DEFAULT = "default"
+GRADE = "grade"
+RANGE = "range"
+
+RATING_SCALE = (
+    (DEFAULT, DEFAULT),
+    (GRADE, GRADE),
+    (RANGE, RANGE)
+)
+
+YEARS = 'Years'
+MONTHS = 'Months'
+DAYS = 'Days'
+
+DURATION_OF_INVOLVEMENT_TYPE = (
+    (YEARS, YEARS),
+    (MONTHS, MONTHS),
+    (DAYS, DAYS)
+)
+
+PERCENTAGE = 'Percentage'
+SCORE = 'Score'
+
+DEDUCTION_TYPE = (
+    (PERCENTAGE, PERCENTAGE),
+    (SCORE, SCORE)
+)
+
+KSA = 'ksa'
+KRA = 'kra'
+KPI = 'kpi'
+PA_QUESTION_SET = "PA Question Set"
+QUESTION_TYPE = (
+    (KSA, 'KSA'),
+    (KRA, 'KRA'),
+    (KPI, 'KPI')
+)
+
+KAAR_QUESTION_SET = (
+    (KSA, 'KSA'),
+    (KRA, 'KRA'),
+    (KPI, 'KPI'),
+    (PA_QUESTION_SET, PA_QUESTION_SET)
+)
+
+NOT_GENERATED = 'not_generated'
+GENERATED = 'generated'
+SENT = 'sent'
+REGENERATED = 'regenerated'
+
+QUESTION_SET_STATUS = (
+    (NOT_GENERATED, 'Not Generated'),
+    (GENERATED, 'Generated'),
+    (SENT, 'Sent'),
+    (REGENERATED, 'Regenerated')
+)
+
+ACKNOWLEDGED, PENDING, ARCHIVED, SUBMITTED, CONFIRMED = 'Acknowledged', 'Pending', 'Archived', \
+    'Submitted', 'Confirmed'
+
+INDIVIDUAL_KPI_COLLECTION_STATUS = (
+    (PENDING, PENDING),
+    (ARCHIVED, ARCHIVED),
+    (SUBMITTED, SUBMITTED),
+    (CONFIRMED, CONFIRMED)
+)
+
+RECEIVED = "Received"
+SAVED = "Saved"
+
+KAAR_QUESTION_STATUS = (
+    (NOT_GENERATED, 'Not Generated'),
+    (GENERATED, 'Generated'),
+    (RECEIVED, RECEIVED),
+    (SAVED, SAVED),
+    (SUBMITTED, SUBMITTED)
+)
+
+KAAR_APPRAISAL_STATUS = (
+    (IDLE, IDLE),
+    (ACTIVE, ACTIVE),
+    (COMPLETED, COMPLETED)
+)
+

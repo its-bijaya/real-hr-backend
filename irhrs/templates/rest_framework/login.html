@@ -1,0 +1,39 @@
+{% extends "rest_framework/login_base.html" %}
+{% load static %}
+{% block title %} RealhrSoft | Admin Login{% endblock %}
+{% block branding %}
+<img src="{% static 'logos/logo-with-tag.png'%}" alt="realhrsoft"
+     height="70" width="250" style="margin-bottom: 10px">
+{% endblock %}
+
+{% block body %}
+{% if not form %}
+    <div class="container">
+        <div class="alert alert-dismissible alert-primary" style="margin-top: 7px">
+            You have been successfully logged out
+            <a href="{% url 'rest_framework:login' %}"><strong>[Login]</strong></a>
+        </div>
+    </div>
+{% else %}
+    {% if next and user.is_authenticated %}
+        <div class="alert alert-dismissible alert-danger" style="margin-top: 7px">
+            You are authenticated as <strong>[{{ user.email }}]</strong>,
+            but you not authorized to access this page or the page is broken.
+            <a href="{% url 'rest_framework:logout' %}"><strong>[Login]</strong></a>
+            with a different account or
+            <a href="{% url 'rest_framework:logout' %}?next=/api-auth/login/"><strong>[Logout]</strong></a>
+        </div>
+    {% elif not next and user.is_authenticated %}
+        <div class="alert alert-dismissible alert-primary" style="margin-top: 7px">
+            You are currently authenticated as <b>{{ user.email }}</b>
+            <a href="{% url 'rest_framework:logout' %}?next=/api-auth/login/"><strong>[Logout]</strong></a>
+        </div>
+    {%else%}
+        <div class="alert alert-dismissible alert-warning" style="margin-top: 7px">
+            Login to start your session
+        </div>
+    {% endif %}
+
+    {{ block.super }}
+{% endif %}
+{% endblock %}

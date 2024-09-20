@@ -1,0 +1,196 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="p-5">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 pb-5">
+                <div class="nav nav-pills flex-column card" id="v-pills-tab" role="tablist"
+                     aria-orientation="vertical">
+                    <a class="nav-link active"
+                       id="commons"
+                       data-toggle="list"
+                       href="#tab-commons"
+                       role="tab"
+                       aria-controls="commons"
+                    >Commons</a>
+                    {% for org in organizations %}
+                        <a class="nav-link"
+                           id="{{ org.slug }}"
+                           data-toggle="list"
+                           href="#tab-{{ org.slug }}"
+                           role="tab"
+                           aria-controls="tab-{{ org.slug }}"
+                        >{{ org }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="tab-content container" id="v-pills-tabContent">
+                    {% for org in organizations %}
+                        <div
+                                class="tab-pane fade"
+                                id="tab-{{ org.slug }}"
+                                role="tabpanel"
+                                aria-labelledby="{{ org.slug }}"
+                        >
+                        <h3>Manage Permissions of {{ org.name }}</h3>
+                            <ul class="list-group list-group-flush pt-5">
+                                {% for group in organization_groups %}
+                                    {% if group.organization == org %}
+                                        <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                {{ group.group }}
+
+                                            </div>
+                                            <div class="col-md-push-4">
+                                            <a href="#tab-{{ org.slug }}"
+                                               data-link="{% url 'portal:organization-permissions-edit' group.id %}"
+                                               data-toggle="modal"
+                                               data-target="#genericModel"
+                                               data-title="Updating permissions of {{ group }}">
+                                                Manage Permissions
+                                            </a>
+                                                ({{ group.permission_count }}/{{ org_permissions }})
+                                            </div>
+                                        </div>
+                                        </li>
+
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                    <div
+                            class="tab-pane fade active show"
+                            id="tab-commons"
+                            role="tabpanel"
+                            aria-labelledby="commons"
+                    ><h3>Manage Common Permissions</h3>
+                        <ul class="list-group list-group-flush pt-5">
+                            {% for group in organization_groups %}
+                                {% if group.organization == None %}
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                            {{ group.group }}
+                                            </div>
+                                            <div class="col-md-push-4">
+                                                <a href="#tab-commons"
+                                                   class="float-right float-sm-none"
+                                                   data-link="{% url 'portal:organization-permissions-edit' group.id %}"
+                                                   data-toggle="modal"
+                                                   data-target="#genericModel"
+                                                   data-title="Updating permissions of {{ group }}">
+                                                    Manage Permissions
+                                                </a>
+                                                 ({{ group.permission_count }}/{{ common_permissions }})
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="genericModel" tabindex="-1" role="dialog"
+         aria-labelledby="genericModelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="genericModelLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function registerListener() {
+            let selectables = $('.ms-elem-selectable');
+
+            let input_json = {};
+            let mapper = {};
+            for (let elem of selectables) {
+                let code = elem.innerText.split(':')[0];
+                input_json[code] = elem.id;
+                mapper[code] = []
+            }
+
+
+            // Update the known ones
+            mapper['4.10'] = [
+                '2.02',
+                '3.00',
+                '4.05',
+                '11.03',
+            ];
+            mapper['4.11'] = [
+                '2.02',
+                '3.00',
+                '4.05',
+                '4.07',
+                '12.02',
+            ];
+            mapper['4.12'] = [
+                '4.05',
+            ];
+
+            selectables.on(
+                'click',
+                function (handler) {
+                    let code = handler.currentTarget.innerText.split(':')[0];
+                    let dependencies = mapper[code];
+                    for (let dependencyCode of dependencies) {
+                        let identifier = '#' + input_json[dependencyCode];
+                        let elem = $(identifier);
+                        elem.click();
+                    }
+                }
+            );
+        }
+    </script>
+
+    <script>
+        $('#genericModel').on('show.bs.modal', function (event) {
+            var link = $(event.relatedTarget).attr('data-link');
+            var title = $(event.relatedTarget).attr('data-title');
+
+            $("#modalBody").html("<span class=\"text-muted\">Loading...</span>");
+            $("#genericModelLabel").html(title);
+            $.get(link, function (data) {
+                $("#modalBody").html(data);
+                $("#ajaxForm").attr("action", link);
+                $("ul").addClass("list-unstyled");
+                registerListener()
+            }).fail(function (xHR) {
+                if (xHR.status == 403) {
+                    $("#modalBody").html(`<h3>Forbidden</h3> <p> ${xHR.responseText} </p>`);
+                } else {
+                    $("#modalBody").html("Oops an error occured");
+                }
+            })
+        });
+        $('#list-tab a').on('click', function (e) {
+            e.preventDefault();
+            $(this).tab('show')
+        })
+    </script>
+
+{% endblock %}

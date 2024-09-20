@@ -1,0 +1,44 @@
+FROM python:3.8
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y software-properties-common gcc \
+    postgresql postgresql-contrib redis-server && \
+    apt-get clean
+
+# Copy project files
+COPY . .
+
+# Create virtual environment and install Python dependencies
+RUN python3 -m venv myenv && \
+    . myenv/bin/activate && \
+    myenv/bin/pip install --upgrade pip wheel && \
+    myenv/bin/pip install -r requirements/dev.txt
+
+# Copy sample environment variables file
+RUN cp .env.sample .env 
+
+# Initialize PostgreSQL without starting the service
+USER postgres
+RUN /etc/init.d/postgresql start && \
+    psql --command "CREATE USER root WITH SUPERUSER PASSWORD 'password';" && \
+    createdb rhrs
+
+# Switch back to root for application setup
+USER root
+
+RUN sed -i "s/DATABASE_USER='postgres'/DATABASE_USER='root'/g; s/DATABASE_PASSWORD='hellonepal'/DATABASE_PASSWORD='password'/g" .env
+
+# Expose the application's port
+EXPOSE 8080
+
+# Start services and application using 
+CMD ["sh", "-c", "/etc/init.d/postgresql start && \
+    redis-server --daemonize no && \
+    source myenv/bin/activate && \
+    python manage.py generate_rsa_keys --skip-checks && \
+    python manage.py migrate && \
+    python manage.py runserver 0.0.0.0:8080"]

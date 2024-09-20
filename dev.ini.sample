@@ -1,0 +1,46 @@
+[watcher:webapp]
+cmd=python manage.py runserver --ssl
+uid=rv
+endpoint_owner=rv
+numprocesses=4
+use_sockets=True
+copy_env=True
+copy_path=True
+virtualenv=/github/backend/venv
+stdout_stream.class=FileStream
+stdout_stream.filename=/github/backend/logs/webapp.log
+stderr_stream.class=FileStream
+stderr_stream.filename=/github/backend/logs/webapp_err.log
+#hooks.after_start=config.hooks.run_raven
+
+# optionally rotate the log file when it reaches 1 gb
+# and save 5 copied of rotated files
+stdout_stream.max_bytes=1073741824
+stdout_stream.backup_count=3
+stderr_stream.max_bytes=1073741824
+stderr_stream.backup_count=3
+
+
+[socket:webapp]
+host=127.0.0.1
+port=8000
+
+[env:webapp]
+LOGS_DIR=/github/backend/logs
+PYTHONPATH=/github/backend/
+#NEW_RELIC_CONFIG_FILE=newrelic.ini
+
+[watcher:webapp_q]
+cmd=python manage.py qcluster
+numprocesses=4
+working_dir=/github/backend/
+virtualenv=/github/backend/venv/
+copy_env=True
+copy_path=True
+stdout_stream.class=FileStream
+stdout_stream.filename=/github/backend/logs/webapp_q.log
+stderr_stream.class=FileStream
+stderr_stream.filename=/github/backend/logs/webapp_q_err.log
+
+[env:webapp_q]
+PYTHONPATH=/github/backend/
