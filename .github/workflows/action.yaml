@@ -26,8 +26,8 @@ jobs:
       - name: Deploy to remote server
         uses: appleboy/ssh-action@v1.0.3
         with:
-            host: 54.235.14.78
-            username: ubuntu
+            host: 103.191.130.35
+            username: monitor
             port: 22
             key: ${{ secrets.SSHKEY }}
             script: | 
