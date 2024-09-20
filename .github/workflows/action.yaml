@@ -13,15 +13,17 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Build & push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v6
-        with:
-          image: itsbijaya/real-hr-backend
-          tags: latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      #- name: Build & push Docker image
+       
+       # uses: mr-smithers-excellent/docker-build-push@v6
+        
+        #with:
+         # image: itsbijaya/real-hr-backend
+          #tags: latest
+          #registry: docker.io
+          #dockerfile: Dockerfile
+          #username: ${{ secrets.DOCKER_USERNAME }}
+          #password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Deploy to remote server
         uses: appleboy/ssh-action@v1.0.3
@@ -30,11 +32,12 @@ jobs:
             username: monitor
             port: 22
             key: ${{ secrets.SSHKEY }}
-            script: | 
+            script: |
+                  ls -a
                 # pull the docker image and run docker compose
                 # cd /home/ubuntu/real-hr                   
-                 sudo docker pull itsbijaya/real-hr-backend:latest
-                 sudo docker-compose up --build        
+                # sudo docker pull itsbijaya/real-hr-backend:latest
+                # sudo docker-compose up --build        
 
 
   
