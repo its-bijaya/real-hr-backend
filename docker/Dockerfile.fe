@@ -5,7 +5,7 @@ WORKDIR /app
 
 RUN mkdir /app/static  && mkdir /app/media
 
-COPY ./dist . 
+COPY dist . 
 
 COPY docker/nginx.conf /etc/nginx/conf.d/
 
