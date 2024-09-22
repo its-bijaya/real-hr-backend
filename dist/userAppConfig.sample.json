@@ -1,0 +1,93 @@
+{
+  "user-calendar-event": {
+    "calendar": true,
+    "events": true
+  },
+  "user-task": {
+    "overview": true,
+    "assigned-to-me": true,
+    "assigned-by-me": true,
+    "observed-by-me": true,
+    "recurring": true,
+    "approvals": true,
+    "closed-and-hold": true,
+    "worklog": true,
+    "reports":{
+      "efficiency": true,
+      "paylog": true
+    }
+  },
+  "user-work-log": {
+    "overview": true,
+    "my-logs": true,
+    "log-work": true
+  },
+  "user-attendance": {
+    "overview": true,
+    "today-log": true,
+    "request": {
+      "travel-attendance": true,
+      "pre-approval-overtime": true,
+      "credit-hour": true,
+      "timesheet": true,
+      "adjustment": true,
+      "overtime-claims": true
+    },
+    "calendar": true,
+    "reports": {
+      "breakin-breakout": true,
+      "adjustment": true,
+      "overtime-claims": true,
+      "daily-attendance": true,
+      "monthly-attendance": true,
+      "attendance-irregularities": true,
+      "credit-hour-delete-history": true,
+      "web-attendance": true,
+      "roster": true,
+      "travel-attendance-delete-history": true,
+      "penalty": true
+    }
+  },
+  "user-leave": {
+    "overview": true,
+    "history": true,
+    "delete-history": true,
+    "encashment": true,
+    "request": true,
+    "employee-request": true
+  },
+  "user-payroll": {
+    "payslip": true,
+    "advance-salary": true,
+    "yearly-payslip": true,
+    "unit-of-work": true,
+    "rebate": true
+  },
+  "user-expense-management": {
+    "request-advance": true,
+    "settle-expense": true
+  },
+  "user-organization": {
+    "overview": true,
+    "chart": true,
+    "document": true,
+    "vision-mission": true,
+    "ethics": true,
+    "holiday": true,
+    "forms": true,
+    "email-notification": true
+  },
+  "user-assessment": {
+    "new-assessment": true,
+    "completed-assessment": true
+  },
+  "user-training": {
+    "overview": true,
+    "my-training": true
+  },
+  "user-pa": {
+    "overview": true,
+    "appraisal": true
+  },
+  "user-employee-directory": true
+}

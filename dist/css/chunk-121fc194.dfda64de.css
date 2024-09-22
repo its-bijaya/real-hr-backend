@@ -1,0 +1,1 @@
+.fixedHeader-height .v-data-table__wrapper{max-height:450px!important;overflow:scroll;position:relative}th{position:sticky!important;top:0;z-index:2;background:#f7f9ff;color:#fff}.fixedHeader-height thead th:first-child{left:0;z-index:3;border-right:1px solid #ccc}.fixedTrColumn{position:sticky;left:0;z-index:1;background:#fff;border-right:1px solid #ccc}

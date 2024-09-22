@@ -1,0 +1,19 @@
+{
+    "VUE_APP_ENV": "development",
+    "VUE_APP_HTTP_PROTOCOL": "http",
+    "VUE_APP_WS_PROTOCOL": "ws",
+    "VUE_APP_API_URL": "http://localhost:8000/api/v1",
+    "VUE_APP_WS_URL" : "ws://localhost:8000",
+    "VUE_APP_SENTRY_DNS": "https://runtime@sentry.io/0000000",
+    "VUE_APP_CLIENT": "realhr",
+    "VUE_APP_NOTICE_BOARD_PREF_COMP": "Leave",
+    "VUE_APP_SHOW_YEARLY_PAYSLIP": "false",
+    "VUE_APP_RECAPTCHA_PUBLIC_KEY": "your google recaptcha public key",
+    "VUE_APP_SHOW_CALENDAR_CHOICE": "true",
+    "VUE_APP_SET_DEFAULT_CALENDAR_TO": "English",
+    "VUE_APP_TRIAL_MODE": "false",
+    "VUE_APP_REMEMBER_REFRESH_TOKEN_EXPIRY": 2592000,
+    "VUE_APP_DEFAULT_REFRESH_TOKEN_EXPIRY": 3600,
+    "DISABLE_WEB_SOCKET": false,
+    "VUE_APP_SHOW_ABSENT_TODAY": "true"
+}

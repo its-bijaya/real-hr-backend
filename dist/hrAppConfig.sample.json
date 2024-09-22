@@ -1,0 +1,285 @@
+{
+  "admin-commons": {
+    "settings": {
+      "bank": true,
+      "document-category": true,
+      "email-template": true,
+      "equipment-category": true,
+      "ethnicity": true,
+      "holiday-category": true,
+      "id-card-samples": true,
+      "religion": true,
+      "exchange-rate": true,
+      "noticeboard": true,
+      "smtp-server": true,
+      "duty-station": true
+    }
+  },
+  "admin-slug-organization": {
+    "overview": true,
+    "document": true,
+    "chart": true,
+    "report": {
+      "email-logs": true,
+      "export-logs": true
+    },
+    "settings": {
+      "fiscal-year": true,
+      "application": true,
+      "holiday": true,
+      "vision-mission": true,
+      "ethics": true,
+      "equipment": true,
+      "division": true,
+      "employment-level": true,
+      "employment-type": true,
+      "job-title": true,
+      "branch": true,
+      "bank": true,
+      "template-mapping": true,
+      "meeting-room": true,
+      "ability": true,
+      "knowledge": true,
+      "skill": true,
+      "other-attributes": true,
+      "email-notification": true,
+      "questionnaire": true
+    }
+  },
+  "admin-slug-event": true,
+  "admin-slug-hris": {
+    "overview": true,
+    "change-requests": true,
+    "id-card-templates": true,
+    "resignation-request": true,
+    "employees": {
+      "pre-employment": {
+        "add": true,
+        "assign-supervisors": true,
+        "onboarding": true
+      },
+      "employment-review": {
+        "change-type": true
+      },
+      "employee-separation": {
+        "offboarding": true
+      },
+      "current-employee-list": true,
+      "past-employee-list": true,
+      "documents": true,
+      "assign-ksao": true,
+      "import": true
+    },
+    "reports": {
+      "basic": {
+        "branch": true,
+        "contract-status": true,
+        "employment-type": true,
+        "profile-completeness": true
+      },
+      "comparative": {
+        "employee-service": true,
+        "employment-level-age": true,
+        "married-age-gender": true
+      },
+      "employment-review": {
+        "change-type": true,
+        "offboarding": true,
+        "pre-employment": true
+      },
+      "generate-report": true,
+      "exit-interview": true
+    },
+    "settings": {
+      "contract": true,
+      "letter-template": true,
+      "separation-type": true,
+      "task-template": true,
+      "employment-review": true,
+      "exit-interview-question-set": true,
+      "resignation-approval": true,
+      "email-settings": true,
+      "duty-station": true
+    }
+  },
+  "admin-slug-attendance": {
+    "import": {
+      "attendance": true,
+      "overtime-claim": true
+    },
+    "offline": true,
+    "penalty": true,
+    "overview": true,
+    "reports": {
+      "breakin-breakout": true,
+      "calendar": true,
+      "daily-attendance": true,
+      "individual": true,
+      "irregularity": true,
+      "overtime": true,
+      "monthly-attendance": true,
+      "punctuality": true,
+      "adjustment": true,
+      "comparative-overtime": true,
+      "overtime-details": true,
+      "monthly-report": true,
+      "yearly-report": true,
+      "geolocation": true,
+      "roster": true
+    },
+    "requests": {
+      "adjustments": true,
+      "overtime-claim": true,
+      "travel-attendance-request": true,
+      "travel-attendance-delete-request": true,
+      "credit-hour": true,
+      "credit-hour-delete-request": true,
+      "timesheet": true,
+      "web-attendance": true,
+      "overtime-request": true
+    },
+    "settings": {
+      "work-shift": true,
+      "device": true,
+      "individual": true,
+      "overtime": true,
+      "travel-attendance-request": true,
+      "credit-hour": true,
+      "timesheet-approval": true,
+      "penalty": true
+    }
+  },
+  "admin-slug-leave": {
+    "overview": true,
+    "employees-request": true,
+    "import": true,
+    "cancel-request": true,
+    "offline": true,
+    "encashment": true,
+    "leave-balance": true,
+    "settings": {
+      "master-settings": true,
+      "approval-settings": true
+    },
+    "reports": {
+      "basic": {
+        "monthly-leave": true,
+        "individual-monthly-leave": true,
+        "yearly-leave": true,
+        "individual-leave-balance": true,
+        "irregularities": true,
+        "recurrence": true,
+        "gender": true,
+        "age": true,
+        "branch": true,
+        "employment-level": true,
+        "employment-type": true,
+        "marital-status": true,
+        "compensatory": true,
+        "carry-forward": true,
+        "summarized-yearly": true
+      },
+      "comparative": {
+        "division": true,
+        "month": true
+      }
+    }
+  },
+  "admin-slug-payroll": {
+    "collection": true,
+    "overview": true,
+    "generate": true,
+    "increment": true,
+    "on-hold": true,
+    "rebate": true,
+    "reports": true,
+    "advance-salary": true,
+    "unit-of-work": true,
+    "response": true,
+    "settings": {
+      "headings": true,
+      "packages": true,
+      "assign-package": true,
+      "approval": true,
+      "report-settings": true,
+      "payroll-start-date": true,
+      "advance-salary": true,
+      "unit-of-work-done": {
+        "code": true,
+        "operation": true,
+        "rate": true
+      },
+      "pre-tax": true,
+      "tax-report": true
+    }
+  },
+  "admin-slug-expense-management": {
+    "setting": true,
+    "request": true,
+    "settle-request": true
+  },
+  "admin-slug-recruitment": {
+    "vacancy-list": true,
+    "application-list": true,
+    "external-interviewer-list": true,
+    "settings": {
+      "question-prepare": true,
+      "letter-template": true
+    }
+  },
+  "admin-slug-assessment": {
+    "prepare": true,
+    "enrolled-users": true
+  },
+  "admin-slug-training": {
+    "training-list": true,
+    "calendar": true,
+    "settings": true,
+    "request": true,
+    "need-analysis": true,
+    "trainer": true
+  },
+  "admin-slug-pa": {
+    "overview": true,
+    "settings": {
+      "frequency-and-mode": true,
+      "generic-questions": true
+    },
+    "reports": {
+      "summary": true,
+      "yearly": true
+    }
+  },
+  "admin-slug-task": {
+    "overview": true,
+    "settings": {
+      "result-areas": true,
+      "assign-task": true,
+      "assign-core-tasks": true,
+      "activities": true
+    },
+    "projects": true,
+    "approvals": true,
+    "reports":{
+      "all-task": true,
+      "closed-hold": true,
+      "paylog": true
+    },
+    "work-log": true
+  },
+  "admin-slug-forms": {
+    "response": true,
+    "report": true,
+    "settings": {
+      "create": true,
+      "question-prepare": true
+    }
+  },
+  "admin-slug-master-report": {
+    "build": true,
+    "list": true,
+    "generalized": {
+      "attendance-and-leave": true
+    }
+  }
+}

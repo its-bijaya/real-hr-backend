@@ -19,9 +19,19 @@ jobs:
           image: itsbijaya/real-hr-backend
           tags: latest
           registry: docker.io
-          dockerfile: Dockerfile
+          dockerfile: ./docker/Dockerfile.be
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+            image: itsbijaya/real-hr-frontend
+            tags: latest
+            registry: docker.io
+            dockerfile: ./docker/Dockerfile.fe
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}    
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
@@ -43,7 +53,7 @@ jobs:
 
             # Pull the latest version of the Docker image
             #sudo docker pull itsbijaya/real-hr-backend:latest
-            #sudo docker pull itsbijaya/real-hr:latest
+            #sudo docker pull itsbijaya/real-hr-fronend:latest
 
             # Run docker-compose to bring up the service with the latest build
             sudo docker-compose up        

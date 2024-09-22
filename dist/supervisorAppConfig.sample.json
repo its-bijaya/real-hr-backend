@@ -1,0 +1,66 @@
+{
+  "user-supervisor-my-team": {
+    "overview": true,
+    "directory": true,
+    "reports": {
+      "profile-change-requests": true,
+      "contract-status": true
+    }
+  },
+  "user-supervisor-work-log": {
+    "overview": true,
+    "review-logs": true
+  },
+  "user-supervisor-leave": {
+    "overview": true,
+    "requests": true,
+    "cancel-requests": true,
+    "offline-leave": true,
+    "reports": {
+      "individual": true,
+      "irregularities": true
+    }
+  },
+  "user-supervisor-attendance": {
+    "overview": true,
+    "roster": true,
+    "requests": {
+      "travel-attendance-requests": true,
+      "travel-attendance-delete-requests": true,
+      "pre-approval-overtime": true,
+      "credit-hour": true,
+      "credit-hour-delete-request": true,
+      "timesheet": true,
+      "web-attendance": true,
+      "adjustments": true,
+      "overtime-claims": true
+    },
+    "reports": {
+      "break-in-break-out": true,
+      "calendar": true,
+      "daily-attendance": true,
+      "irregularities": true,
+      "individual-attendance": true,
+      "monthly-attendance": true,
+      "punctuality": true,
+      "geolocation": true,
+      "penalty": true
+    }
+  },
+  "user-supervisor-task": {
+    "overview": true,
+    "reports": {
+      "all-tasks": true,
+      "closed-hold": true,
+      "paylog": true
+    },
+    "worklog": true
+  },
+  "user-supervisor-recruitment": {
+    "requisition": true
+  },
+  "user-supervisor-payroll": {
+    "advance-salary-request": true,
+    "unit-of-work": true
+  }
+}

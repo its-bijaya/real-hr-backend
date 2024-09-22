@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["pages/admin/_slug/pa/overview"],{"7d06":function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("overview",{attrs:{as:"hr"}})},r=[],s=t("8f2e"),o={components:{Overview:s["a"]}},i=o,l=t("2877"),u=Object(l["a"])(i,a,r,!1,null,null,null);n["default"]=u.exports}}]);
