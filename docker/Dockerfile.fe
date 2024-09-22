@@ -7,7 +7,7 @@ RUN mkdir /app/static  && mkdir /app/media
 
 COPY ./dist . 
 
-COPY nginx.conf /etc/nginx/conf.d/
+COPY docker/nginx.conf /etc/nginx/conf.d/
 
 EXPOSE 80
 
