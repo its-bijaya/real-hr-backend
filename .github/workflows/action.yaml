@@ -45,7 +45,7 @@ jobs:
             sudo docker pull itsbijaya/real-hr-backend:latest
 
             # Run docker-compose to bring up the service with the latest build
-            sudo docker-compose up --build -d        
+            sudo docker-compose up        
 
 
   
