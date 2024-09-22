@@ -40,8 +40,6 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           script: |
             ls -a
-            # Navigate to the project directory
-            cd /home/ubuntu/real-hr
 
             # Pull the latest version of the Docker image
             sudo docker pull itsbijaya/real-hr-backend:latest
