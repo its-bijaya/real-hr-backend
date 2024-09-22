@@ -42,14 +42,10 @@ services:
       - my_network
   
   frontend:
-    image: itsbijaya/real-hr-fronetnd:latest
+    image: itsbijaya/real-hr-frontend:latest
     container_name: real-hr-frontend
     ports:
       - "80:80"
-    depends_on:
-      - postgres
-      - redis
-      - backend
     networks:
       - my_network
 
