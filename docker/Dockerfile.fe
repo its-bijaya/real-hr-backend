@@ -1,6 +1,9 @@
 FROM nginx:alpine
 
+
 WORKDIR /app
+
+RUN mkdir /app/static  && mkdir /app/media
 
 COPY ./dist . 
 
