@@ -27,10 +27,8 @@ services:
       - my_network
 
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: real-hr-compose
+    image: itsbijaya/real-hr-backend:latest
+    container_name: real-hr-backend
     env_file:
       - .env
     ports:
