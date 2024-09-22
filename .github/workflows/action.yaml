@@ -13,38 +13,41 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      #- name: Build & push Docker image
-       
-       # uses: mr-smithers-excellent/docker-build-push@v6
-        
-        #with:
-         # image: itsbijaya/real-hr-backend
-          #tags: latest
-          #registry: docker.io
-          #dockerfile: Dockerfile
-          #username: ${{ secrets.DOCKER_USERNAME }}
-          #password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: itsbijaya/real-hr-backend
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
-                  key: ${{ secrets.SSHKEY }}
-                  known_hosts: 'unnecessary'
+            key: ${{ secrets.SSHKEY }}
+            known_hosts: 'unnecessary'
       - name: Adding Known Hosts
         run: ssh-keyscan -H  ${{ secrets.HOST }} >> ~/.ssh/known_hosts
         
       - name: Deploy to remote server
         uses: appleboy/ssh-action@v1.0.3
         with:
-            host: ${{ secrets.HOST }}
-            username: monitor
-            port: 22
-            key: ${{ secrets.SSHKEY }}
-            script: |
-                  ls -a
-                # pull the docker image and run docker compose
-                # cd /home/ubuntu/real-hr                   
-                # sudo docker pull itsbijaya/real-hr-backend:latest
-                # sudo docker-compose up --build        
+          host: ${{ secrets.HOST }}
+          username: azure
+          port: 22
+          key: ${{ secrets.SSHKEY }}
+          script: |
+            ls -a
+            # Navigate to the project directory
+            cd /home/ubuntu/real-hr
+
+            # Pull the latest version of the Docker image
+            sudo docker pull itsbijaya/real-hr-backend:latest
+
+            # Run docker-compose to bring up the service with the latest build
+            sudo docker-compose up --build -d        
 
 
   
