@@ -3,9 +3,10 @@ FROM nginx:alpine
 
 WORKDIR /app
 
-RUN mkdir /app/static  && mkdir /app/media
+RUN mkdir /app/static  && mkdir /app/media && mkdir /dist
 
-COPY dist . 
+
+COPY dist /dist
 
 COPY docker/nginx.conf /etc/nginx/conf.d/
 
