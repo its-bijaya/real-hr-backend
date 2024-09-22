@@ -42,7 +42,8 @@ jobs:
             ls -a
 
             # Pull the latest version of the Docker image
-            sudo docker pull itsbijaya/real-hr-backend:latest
+            #sudo docker pull itsbijaya/real-hr-backend:latest
+            #sudo docker pull itsbijaya/real-hr:latest
 
             # Run docker-compose to bring up the service with the latest build
             sudo docker-compose up        
